@@ -67,21 +67,31 @@ public class HomePage extends JFrame {
                     BorderFactory.createCompoundBorder(
                             BorderFactory.createLineBorder(Color.BLACK, 1), // Blue border
                             BorderFactory.createLineBorder(Color.BLACK, 1) // Black border (to cover the inner border of
-                                                                           // the rounded shape)
+                            // the rounded shape)
                     )));
-                    if (label.equals("Home")) {
-                        button.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                // Open new homepage frame
-                                HomePage homepage = new HomePage();
-                                homepage.setVisible(true);
-                            }
-                        });
+            if (label.equals("Home")) {
+                button.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        // Open new homepage frame
+                        HomePage homepage = new HomePage();
+                        homepage.setVisible(true);
                     }
+                });
+            }
+            else if (label.equals("About")) {
+                button.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        // Open new homepage frame
+                        About about = new About();
+                        about.setVisible(true);
+                    }
+                });
+            }
             navigationBar.add(button);
         }
-        
+
 
         // Portal Log in
         JLabel portalLogIn = new JLabel("Log In Portal");
@@ -187,50 +197,50 @@ public class HomePage extends JFrame {
 
         // Notice Box
         JPanel noticePanel = new JPanel();
-        noticePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10)); 
-        noticePanel.setBackground(Color.LIGHT_GRAY); 
-        noticePanel.setBounds(500, 180, 450, 400); 
+        noticePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+        noticePanel.setBackground(Color.LIGHT_GRAY);
+        noticePanel.setBounds(500, 180, 450, 400);
         c.add(noticePanel);
 
-        
+
         String[] noticeTitles = {
-            "Final Term Exam Date : ",
-            "Library Closures : ",
-            "Student ID Renewal : ",
-            "Debate Club Meeting : ",
-            "Scholarship Application Deadline : ",
-            "Final Term Exam Date : ",
-            "Library Closures : ",
-            "Student ID Renewal : ",
-            "Debate Club Meeting : ",
-            "Scholarship Application Deadline : "
+                "Final Term Exam Date : ",
+                "Library Closures : ",
+                "Student ID Renewal : ",
+                "Debate Club Meeting : ",
+                "Scholarship Application Deadline : ",
+                "Final Term Exam Date : ",
+                "Library Closures : ",
+                "Student ID Renewal : ",
+                "Debate Club Meeting : ",
+                "Scholarship Application Deadline : "
         };
-    
+
         String[] noticeDescriptions = {
-            "Final term exam will start 1 May. Everyone collect your permit.",
-            "Library will be closed for renovation from 1 June to 15 June.",
-            "All students must renew their student IDs before 30 April.",
-            "Meeting will be held on 25 April at 4PM in room A203.",
-            "Scholarship applications are due on 10 May.",
-            "Final term exam will start 1 May. Everyone collect your permit.",
-            "Library will be closed for renovation from 1 June to 15 June.",
-            "All students must renew their student IDs before 30 April.",
-            "Meeting will be held on 25 April at 4PM in room A203.",
-            "Scholarship applications are due on 10 May."
+                "Final term exam will start 1 May. Everyone collect your permit.",
+                "Library will be closed for renovation from 1 June to 15 June.",
+                "All students must renew their student IDs before 30 April.",
+                "Meeting will be held on 25 April at 4PM in room A203.",
+                "Scholarship applications are due on 10 May.",
+                "Final term exam will start 1 May. Everyone collect your permit.",
+                "Library will be closed for renovation from 1 June to 15 June.",
+                "All students must renew their student IDs before 30 April.",
+                "Meeting will be held on 25 April at 4PM in room A203.",
+                "Scholarship applications are due on 10 May."
         };
-          
+
         for (int i = 0; i < noticeTitles.length; i++) {
             JLabel titleLabel = new JLabel(noticeTitles[i]);
             titleLabel.setFont(new Font("Arial", Font.BOLD, 16)); // Bold title
 
             JLabel descriptionLabel = new JLabel(noticeDescriptions[i]);
             descriptionLabel.setFont(new Font("Arial", Font.PLAIN, 14));
-        
+
 
             noticePanel.add(titleLabel);
             noticePanel.add(descriptionLabel);
         }
-          
-        
+
+
     }
 }
