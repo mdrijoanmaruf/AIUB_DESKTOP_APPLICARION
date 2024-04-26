@@ -67,36 +67,44 @@ public class About extends JFrame {
                     BorderFactory.createCompoundBorder(
                             BorderFactory.createLineBorder(Color.BLACK, 1), // Blue border
                             BorderFactory.createLineBorder(Color.BLACK, 1) // Black border (to cover the inner border of
-                            // the rounded shape)
+                                                                           // the rounded shape)
                     )));
-            if (label.equals("Home")) {
-                button.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        // Open new homepage frame
-                        HomePage homepage = new HomePage();
-                        homepage.setVisible(true);
+                    if (label.equals("Home")) {
+                        button.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                // Open new homepage frame
+                                HomePage homepage = new HomePage();
+                                homepage.setVisible(true);
+                            }
+                        });
                     }
-                });
-            }
-            else if (label.equals("About")) {
-                button.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        // Open new homepage frame
-                        About about = new About();
-                        about.setVisible(true);
+                    else if (label.equals("About")) {
+                        button.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                // Open new homepage frame
+                                About about = new About();
+                                about.setVisible(true);
+                            }
+                        });
                     }
-                });
-            }
             navigationBar.add(button);
         }
+        
 
-        // Create title
-        JLabel title = new JLabel("About");
-        title.setFont(new Font("Arial" , Font.BOLD, 40));
-        title.setForeground(customColor);
-        title.setBounds(350,120,200,30);
-        c.add(title);
+        // Creating About Setction Element        
+        JButton informationButton = new JButton("Information");
+        JButton generalInformation = new JButton("General Information");
+        JButton whyStudyAiub = new JButton("Why Study In Aiub?");
+        JButton resources = new JButton("Resources");
+        JButton careerOpportunity = new JButton("Career Opportunity");
+        JButton convocation = new JButton("Convocation");
+
+        informationButton.setBounds(100,100,200,200);
+        informationButton.setBackground(Color.RED);
+        c.add(informationButton);
     }
+
+    
 }
