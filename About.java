@@ -12,6 +12,7 @@ public class About extends JFrame {
         init();
     }
 
+    // Init
     public void init() {
         // Creating frame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
